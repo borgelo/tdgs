@@ -1,0 +1,29 @@
+<h1>Listing re_ins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recipe</th>
+      <th>Ingredient</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @re_ins.each do |re_in| %>
+      <tr>
+        <td><%= re_in.recipe_id %></td>
+        <td><%= re_in.ingredient_id %></td>
+        <td><%= link_to 'Show', re_in %></td>
+        <td><%= link_to 'Edit', edit_re_in_path(re_in) %></td>
+        <td><%= link_to 'Destroy', re_in, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Re in', new_re_in_path %>

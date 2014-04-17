@@ -1,0 +1,29 @@
+<script type="text/javascript">
+    jQuery(function($) {
+        $("#submit_ingredient_btn").submitIngredient();
+    })
+
+</script>
+
+
+<%= form_for(@re_in) do |f| %>
+  <% if @re_in.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@re_in.errors.count, "error") %> prohibited this re_in from being saved:</h2>
+
+      <ul>
+      <% @re_in.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.number_field :recipe_id, value:@recipe.id, hidden:true %>
+  <table>
+	  <tr><td><%= f.label :amount %></td><td><%= f.label :unit %></td><td><%= f.label :ingredient_id %></td></tr>
+	  <tr><td><%= f.number_field :amount %></td><td><%= f.text_field :unit %></td><td><%= f.text_field :ingredient_name %></td><td><%= f.button "legg til", name: "submit_ingredient_btn", id: "submit_ingredient_btn", type: "button", class: "btn btn-large btn-primary" %></td></tr>
+  </table>
+
+    
+<% end %>

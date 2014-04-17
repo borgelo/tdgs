@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+  <h1><%= @meal.title %></h1>
+<div class="ingredients">
+	<%= render partial: 'recipe_ingredient', collection: @meal.recipes %>
+</div>
+<div class="maincontent">
+	<%= render partial: 'recipe', collection: @meal.recipes %>
+</div>

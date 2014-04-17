@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Recipe:</strong>
+  <%= @re_in.recipe.title %>
+</p>
+
+<p>
+  <strong>Ingredient:</strong>
+  <%= @re_in.amount %> <%=@re_in.unit%> <%= @re_in.ingredient.name %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_re_in_path(@re_in) %> |
+<%= link_to 'Back', re_ins_path %>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tdgs</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="logo">
+    <a href="/" title="Tromsø Dannede Gourmet Selskab"><%= image_tag "kulinarisk.png" %></a>
+    </div>
+<%= yield %>
+
+</body>
+</html>

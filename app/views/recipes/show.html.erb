@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @recipe.title %>
+</p>
+
+<p>
+  <strong>Ingress:</strong>
+  <%= @recipe.ingress %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @recipe.body %>
+</p>
+
+<p>
+  <strong>Prepare time:</strong>
+  <%= @recipe.prepare_hours %>:<%= @recipe.prepare_minutes %>
+</p>
+
+<p>
+  <strong>Cooking time:</strong>
+  <%= @recipe.cooking_hours %>:<%= @recipe.cooking_minutes %>
+</p>
+
+<p>
+  <strong>Servings:</strong>
+  <%= @recipe.servings %>
+</p>
+
+<p>
+  <strong>Ingredienser:</strong>
+  <% @recipe.re_ins.each do |rein| %><li>  <%= rein.amount %> <%=rein.unit%> <%= rein.ingredient.name %></li>
+<% end %>
+</p>
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %> |
+<%= link_to 'New', new_recipe_path %>

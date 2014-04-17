@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Recipe:</strong>
+  <%= @me_re.recipe %>
+</p>
+
+<p>
+  <strong>Meal:</strong>
+  <%= @me_re.meal %>
+</p>
+
+<%= link_to 'Edit', edit_me_re_path(@me_re) %> |
+<%= link_to 'Back', me_res_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  ingress: MyString
+  body: MyString
+  prepare_time: 2014-04-05 13:10:09
+  cooking_time: 2014-04-05 13:10:09
+  servings: 
+
+two:
+  title: MyString
+  ingress: MyString
+  body: MyString
+  prepare_time: 2014-04-05 13:10:09
+  cooking_time: 2014-04-05 13:10:09
+  servings: 
