@@ -1,9 +1,17 @@
-<p id="notice"><%= notice %></p>
+	<div class="row clearfix">
+		<div class="col-md-3 column">
+			<h3>Ingredienser</h3>
+			<ul>
+				<%= render partial: 'recipe_ingredient', collection: @meal.recipes %>
+			</ul>
+		</div>
+		<div class="col-md-6 column">
+			<h2>
+				<%= @meal.title %>
+			</h2>
+			<p>
+				<%= render partial: 'recipe', collection: @meal.recipes %>
+			</p>
+		</div>
+	</div>
 
-  <h1><%= @meal.title %></h1>
-<div class="ingredients">
-	<%= render partial: 'recipe_ingredient', collection: @meal.recipes %>
-</div>
-<div class="maincontent">
-	<%= render partial: 'recipe', collection: @meal.recipes %>
-</div>
