@@ -1,4 +1,10 @@
 Tdgs::Application.routes.draw do
+  resources :commodities
+
+  resources :types
+
+  resources :categories
+
   resources :re_ins
 
   resources :ingredients
@@ -8,6 +14,8 @@ Tdgs::Application.routes.draw do
   resources :recipes
 
   resources :meals
+  
+  mount Ckeditor::Engine => '/ckeditor'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

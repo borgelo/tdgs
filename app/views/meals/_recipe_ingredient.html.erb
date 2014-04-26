@@ -1,3 +1,5 @@
   <strong><%= recipe_ingredient.title %></strong>
+  <ul>
   <% recipe_ingredient.re_ins.each do |rein| %><li><%= rein.amount %> <%=rein.unit%> <%= rein.ingredient.name %></li>
 <% end %>
+</ul><br/>

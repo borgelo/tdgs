@@ -3,15 +3,6 @@
   <p><%= recipe.ingress %></p>
 
 <p>
-  <%= recipe.body %>
-</p>
-
-<p>
-  <strong>Prepare time:</strong>
-  <%= recipe.prepare_hours %>:<%= recipe.prepare_minutes %>
-</p>
-
-<p>
-  <strong>Cooking time:</strong>
-  <%= recipe.cooking_hours %>:<%= recipe.cooking_minutes %>
+	<%= recipe.body.html_safe %>
+	
 </p>
