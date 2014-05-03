@@ -10,6 +10,9 @@
 				<%= @meal.title %>
 			</h2>
 			<p>
+				Møtedato: <%= @meal.meet_date %>
+			</p>
+			<p>
 				<%= render partial: 'recipe', collection: @meal.recipes %>
 			</p>
 		</div>
