@@ -1,7 +1,11 @@
-<h1>Editing recipe</h1>
+<h1>Oppdater oppskriften</h1>
 
-<%= render 'form' %>
-<%= render 're_ins/form' %>
+	<div class="row clearfix">
+		<div class="col-md-4 column">
+			<%= render 're_ins/form' %>
+		</div>
+		<div class="col-md-8 column">
+			<%= render 'form' %>
+		</div>
+	</div>
 
-<%= link_to 'Show', @recipe %> |
-<%= link_to 'Back', recipes_path %>

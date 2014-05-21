@@ -1,17 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  ingress: MyString
-  body: MyString
-  prepare_time: 2014-04-05 13:10:09
-  cooking_time: 2014-04-05 13:10:09
-  servings: 
+saus:
+  title: Brunsaus
+  ingress: God brunsaus
+  body: Lages og behandles
+  prepare_time: 40
+  cooking_time: 20
+  servings: 4
+  category: saus
+  type: tilbehør
+  commodity: 
 
-two:
-  title: MyString
-  ingress: MyString
-  body: MyString
-  prepare_time: 2014-04-05 13:10:09
-  cooking_time: 2014-04-05 13:10:09
-  servings: 

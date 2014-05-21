@@ -1,4 +1,7 @@
 Tdgs::Application.routes.draw do
+  resources :users
+    match '/signup',  to: 'users#new',            via: 'get'
+
   resources :commodities
 
   resources :types
@@ -14,6 +17,13 @@ Tdgs::Application.routes.draw do
   resources :recipes
 
   resources :meals
+  
+  
+  
+#  resources :sessions, only: [:new, :create, :destroy]
+#  get '/signin',  to: 'sessions#new'
+#  get '/signout', to: 'sessions#destroy', via: :delete
+  
   
   mount Ckeditor::Engine => '/ckeditor'
 

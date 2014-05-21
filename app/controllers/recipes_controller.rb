@@ -4,7 +4,14 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all
+    type = params[:type]
+    
+    if type
+      @recipes = Recipe.where(type_id: type)
+    else
+      @recipes = Recipe.all
+    end  
+        
   end
 
   # GET /recipes/1

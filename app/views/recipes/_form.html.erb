@@ -14,7 +14,8 @@
 
   <div class="field">
 	  <%= f.label :meal %><br>
-	  <%= f.number_field :meal_id %>
+	  <%= f.collection_select :meal_id, Meal.order('title ASC').all, :id, :title, {:class => 'selectpicker', :include_blank => '-- Velg rett --'} %>
+	  
   </div>
   <div class="field">
     <%= f.label :category_id %><br>
@@ -55,13 +56,9 @@
     <%= f.text_field :servings %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Lagre oppskriften", class: "btn btn-large btn-primary" %>
   </div>
   
-  <div id ="rein_ingredients">
-	  <strong>Ingredienser:</strong>
-	    <% @recipe.re_ins.each do |rein| %><li>  <%= rein.amount %> <%=rein.unit%> <%= rein.ingredient.name %></li>
-	  <% end %>
-  </div>
+
 <% end %>
 

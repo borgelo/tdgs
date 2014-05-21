@@ -1,30 +1,11 @@
-<h1>Listing recipes</h1>
+<h1>Oppskrifter</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Ingress</th>
-      <th>Prepare time</th>
-      <th>Cooking time</th>
-      <th>Servings</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
   <tbody>
     <% @recipes.each do |recipe| %>
       <tr>
-        <td><%= recipe.title %></td>
-        <td><%= recipe.ingress %></td>
-        <td><%= recipe.prepare_hours %>:<%= recipe.prepare_minutes %></td>
-        <td><%= recipe.cooking_hours %>:<%= recipe.cooking_minutes %></td>
-        <td><%= recipe.servings %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to recipe.title, recipe %></td>      
       </tr>
     <% end %>
   </tbody>

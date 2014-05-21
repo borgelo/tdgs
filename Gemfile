@@ -9,10 +9,14 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'ckeditor'
+#gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt-ruby'
 
 group :development, :test do
   gem 'sqlite3'
   gem 'database_cleaner', '0.7.0'
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'factory_girl_rails', '4.2.1'
 end
 
 group :production do

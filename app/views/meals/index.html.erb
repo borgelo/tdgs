@@ -1,22 +1,11 @@
-<h1>Listing meals</h1>
+<h1>Måltider</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
   <tbody>
     <% @meals.each do |meal| %>
       <tr>
-        <td><%= meal.title %></td>
-        <td><%= link_to 'Show', meal %></td>
-        <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
-        <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to meal.title, meal %></td>
       </tr>
     <% end %>
   </tbody>
