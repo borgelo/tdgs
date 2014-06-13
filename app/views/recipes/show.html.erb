@@ -2,17 +2,23 @@
 
 <p>
   <strong>Category:</strong>
+  <% if @recipe.category %>
   <%= @recipe.category.name %>
+  <% end %>
 </p>
 
 <p>
   <strong>Type:</strong>
+  <% if @recipe.type %>
   <%= @recipe.type.name %>
+  <% end %>
 </p>
 
 <p>
   <strong>Commodity:</strong>
-  <%= @recipe.commodity.name %>
+  <% if @recipe.commodity %>
+  <%= @recipe.commodity.name  %>
+  <% end %>
 </p>
 
 <p>

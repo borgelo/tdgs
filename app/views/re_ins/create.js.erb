@@ -1,1 +1,7 @@
-￿
+jQuery(function($) {
+    var itemval = '';
+    <% rein = @re_in %>
+	itemval += '<li><%=rein.amount%> <%=rein.unit%> <%=rein.ingredient.name%></li>'
+    $("#rein_ingredients").append(itemval);
+	
+})

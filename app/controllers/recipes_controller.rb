@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_action :signed_in_user, only: [:index, :show, :edit, :update]
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   # GET /recipes
@@ -79,4 +80,13 @@ class RecipesController < ApplicationController
     def recipe_params
       params.require(:recipe).permit(:meal_id, :category_id, :type_id, :commodity_id, :title, :ingress, :body, :prepare_hours, :prepare_minutes, :cooking_hours, :cooking_minutes, :servings)
     end
+
+    # Before filters
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Logg inn."
+      end
+    end
+    
 end

@@ -1,0 +1,15 @@
+diff --git a/app/views/re_ins/create.js.erb b/app/views/re_ins/create.js.erb
+index 5fc6fad..7267d78 100644
+--- a/app/views/re_ins/create.js.erb
++++ b/app/views/re_ins/create.js.erb
+@@ -1,8 +1 @@
+-jQuery(function($) {
+-    var itemval = '';
+-    <% rein = @re_in %>
+-	itemval += '<li><%=rein.amount%> <%=rein.unit%> <%=rein.ingredient.name%></li>'  
+-    $("#rein_ingredients").append(itemval);
+-	
+-})
+-
++￿
+\ No newline at end of file

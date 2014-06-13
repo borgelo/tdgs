@@ -1,4 +1,5 @@
 class MealsController < ApplicationController
+  before_action :signed_in_user, only: [:index, :show, :edit, :update]
   before_action :set_meal, only: [:show, :edit, :update, :destroy]
 
   # GET /meals
@@ -71,4 +72,13 @@ class MealsController < ApplicationController
     def meal_params
       params.require(:meal).permit(:title, :meet_date)
     end
+    
+    # Before filters
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Logg inn."
+      end
+    end
+    
 end
