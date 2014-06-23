@@ -1,51 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Category:</strong>
-  <% if @recipe.category %>
-  <%= @recipe.category.name %>
-  <% end %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <% if @recipe.type %>
-  <%= @recipe.type.name %>
-  <% end %>
-</p>
-
-<p>
-  <strong>Commodity:</strong>
-  <% if @recipe.commodity %>
-  <%= @recipe.commodity.name  %>
-  <% end %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @recipe.title %>
-</p>
-
-<p>
-  <strong>Ingress:</strong>
-  <%= @recipe.ingress %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @recipe.body.html_safe %>
-</p>
-
-<p>
-  <strong>Servings:</strong>
-  <%= @recipe.servings %>
-</p>
-
-<p>
-  <strong>Ingredienser:</strong>
-  <% @recipe.re_ins.each do |rein| %><li>  <%= rein.amount %> <%=rein.unit%> <%= rein.ingredient.name %></li>
+	<div class="row clearfix">
+		<div class="col-md-3 column">
+			<h3>Ingredienser</h3>
+  <ul>
+  <% @recipe.re_ins.each do |rein| %><li><%= rein.amount %> <%=rein.unit%> <%= rein.ingredient.name %></li>
 <% end %>
-</p>
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %> |
-<%= link_to 'New', new_recipe_path %>
+</ul><br/>
+			</ul>
+		</div>
+		<div class="col-md-6 column">
+			<p>
+				<h2><%= @recipe.title %></h2>
+				<%= image_tag "kulinarisk_small.png" %>
+				<p><%= @recipe.ingress %></p>
+
+				<p>
+					<%= @recipe.body.html_safe %>
+	
+				</p>
+				<%= link_to 'Se hele menyen ' + @recipe.meal.meet_date.to_s, @recipe.meal %>
+			</p>
+		</div>
+	</div>
+	
+	Se hele menyen
