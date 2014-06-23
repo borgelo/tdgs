@@ -72,4 +72,13 @@ class TypesController < ApplicationController
     def type_params
       params.require(:type).permit(:name)
     end
+    
+    # Before filters
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Logg inn."
+      end
+    end
+    
 end

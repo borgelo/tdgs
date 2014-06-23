@@ -72,4 +72,13 @@ class MeResController < ApplicationController
     def me_re_params
       params.require(:me_re).permit(:recipe, :meal)
     end
+    
+    # Before filters
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Logg inn."
+      end
+    end
+    
 end

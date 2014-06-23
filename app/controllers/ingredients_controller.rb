@@ -56,4 +56,13 @@ class IngredientsController < ApplicationController
     def ingredient_params
       params.require(:ingredient).permit(:name)
     end
+    
+    # Before filters
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Logg inn."
+      end
+    end
+    
 end

@@ -72,4 +72,13 @@ class ReInsController < ApplicationController
     def re_in_params
       params.require(:re_in).permit(:recipe_id, :ingredient_name, :ingredient_id, :amount, :unit)
     end
+    
+    # Before filters
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Logg inn."
+      end
+    end
+    
 end

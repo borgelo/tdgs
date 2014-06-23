@@ -72,4 +72,13 @@ class CategoriesController < ApplicationController
     def category_params
       params.require(:category).permit(:name)
     end
+    
+    # Before filters
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Logg inn."
+      end
+    end
+    
 end
