@@ -1,4 +1,5 @@
 class MeResController < ApplicationController
+  before_action :signed_in_user, only: [:index, :show, :edit, :update]
   before_action :set_me_re, only: [:show, :edit, :update, :destroy]
 
   # GET /me_res

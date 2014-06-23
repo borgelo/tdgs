@@ -1,4 +1,5 @@
 class TypesController < ApplicationController
+  before_action :signed_in_user, only: [:index, :show, :edit, :update]
   before_action :set_type, only: [:show, :edit, :update, :destroy]
 
   # GET /types
