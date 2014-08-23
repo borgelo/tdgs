@@ -6,9 +6,15 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     type = params[:type]
+    category = params[:category]
+    commodity = params[:commodity]
     
     if type
       @recipes = Recipe.where(type_id: type)
+    elsif category
+      @recipes = Recipe.where(category_id: category)
+    elsif commodity
+      @recipes = Recipe.where(commodity_id: commodity)
     else
       @recipes = Recipe.all
     end  

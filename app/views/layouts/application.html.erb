@@ -19,7 +19,7 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mat<strong class="caret"></strong></a>
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filtrer<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<%
 									Type.all.each do |type|
@@ -30,17 +30,22 @@
 								<% end %>
 								<li class="divider">
 								</li>
+								<%
+									Commodity.all.each do |commodity|
+								%>
 								<li>
-									<a href="#">Grill</a>
+									<a href="/recipes?commodity=<%= commodity.id %> "><%= commodity.name %></a>
 								</li>
+								<% end %>
 								<li class="divider">
 								</li>
+								<%
+									Category.all.each do |category|
+								%>
 								<li>
-									<a href="#">Fisk</a>
+									<a href="/recipes?category=<%= category.id %> "><%= category.name %></a>
 								</li>
-								<li>
-									<a href="#">Kjøtt</a>
-								</li>
+								<% end %>
 							</ul>
 						</li>
 					</ul>
