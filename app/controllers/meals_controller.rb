@@ -70,7 +70,7 @@ class MealsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meal_params
-      params.require(:meal).permit(:title, :meet_date)
+      params.require(:meal).permit(:title, :ingress, :meet_date)
     end
     
     # Before filters
