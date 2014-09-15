@@ -20,7 +20,8 @@ Tdgs::Application.routes.draw do
   resources :recipes
 
   resources :meals
-  
+
+  resources :meetings
   
   
 #  resources :sessions, only: [:new, :create, :destroy]
@@ -34,7 +35,7 @@ Tdgs::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-    root :to => 'meals#index'
+    root :to => 'meetings#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

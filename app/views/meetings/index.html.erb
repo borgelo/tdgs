@@ -1,0 +1,14 @@
+<h1>Møter</h1>
+
+  <tbody>
+    <% @meetings.each do |meeting| %>
+      <tr>
+        <td><%= meal.meet_date %> <%= link_to meal.name, meeting %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nytt møte', new_meeting_path %>

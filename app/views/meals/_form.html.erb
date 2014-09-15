@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+	  <%= f.label :meal %><br>
+	  <%= f.collection_select :meeting_id, Meeting.order('meet_date ASC').all, :id, :name, {:class => 'selectpicker', :include_blank => '-- Velg møte --'} %>
+
+  <div class="field">
     <%= f.label :title, 'Tittel' %><br/>
     <%= f.text_field :title %>
   </div>
