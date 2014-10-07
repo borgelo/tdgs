@@ -1,11 +1,13 @@
 <h1>Møter</h1>
 
   <tbody>
+	  <table>
     <% @meetings.each do |meeting| %>
       <tr>
-        <td><%= meal.meet_date %> <%= link_to meal.name, meeting %></td>
+        <td><%= meeting.meet_date %> <%= link_to meeting.name, meeting %></td>
       </tr>
     <% end %>
+</table>
   </tbody>
 </table>
 

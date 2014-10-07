@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-	  <%= f.label :meal %><br>
+	  <%= f.label :meal, 'Møte' %><br>
 	  <%= f.collection_select :meeting_id, Meeting.order('meet_date ASC').all, :id, :name, {:class => 'selectpicker', :include_blank => '-- Velg møte --'} %>
 
   <div class="field">
@@ -23,10 +23,10 @@
     <%= f.label :Ingress, 'Ingress' %><br/>
     <%= f.text_field :ingress %>
   </div>
-  <div class="field">
-	  <%= f.label :meet_date, 'Møtedato' %><br/>
-	  <%= f.date_field :meet_date %>
-	</div>
+  <div>
+    <%= f.label :sort_order, 'Sortering (rett nr i oppskrift)' %><br/>
+    <%= f.number_field :sort_order %>  
+  </div>
 	  <br/>
   <div class="actions">
     <%= f.submit "Registrer" %>

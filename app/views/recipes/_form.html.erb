@@ -14,7 +14,7 @@
 
   <div class="field">
 	  <%= f.label :meal %><br>
-	  <%= f.collection_select :meal_id, Meal.order('title ASC').all, :id, :title, {:class => 'selectpicker', :include_blank => '-- Velg møte --'} %>
+	  <%= f.collection_select :meal_id, Meal.order('title ASC').all, :id, :title, {:class => 'selectpicker', :include_blank => '-- Velg rett --'} %>
 	  
   </div>
   <div class="field">

@@ -22,15 +22,10 @@ class ReInsController < ApplicationController
 
   # POST /re_ins
   def create    
-    puts '[rein create] start create ingredient'
-    @ingredient = Ingredient.find_by_name(re_in_params[:ingredient_name])
-    puts @ingredient
-    if @ingredient
-      puts 'found ingredient'
-      puts @ingredient.name
-    else
-      puts 'creating ingredient'
-      @ingredient = Ingredient.new({"name"=>re_in_params[:ingredient_name]})
+    ingredient_name = re_in_params[:ingredient_name]
+    @ingredient = Ingredient.find_by_name(ingredient_name)
+    if !@ingredient      
+      @ingredient = Ingredient.new({"name"=>ingredient_name})
       @ingredient.save
     end
     

@@ -7,7 +7,14 @@
 
 <p>
   <strong>Ingredient:</strong>
-  <%= @re_in.amount %> <%=@re_in.unit%> <%= @re_in.ingredient.name %>
+  <%
+  	if @re_ins.unit > 1 && re_in.ingredient.plural
+		name = ingredient.plural
+	else
+		name = ingredient.name
+	end
+  %>
+  <%= @re_in.amount %> <%=@re_in.unit%> <%= name %>
 </p>
 
 

@@ -8,6 +8,7 @@ class RecipesController < ApplicationController
     type = params[:type]
     category = params[:category]
     commodity = params[:commodity]
+    search = params[:q]
     
     if type
       @recipes = Recipe.where(type_id: type)
@@ -15,11 +16,18 @@ class RecipesController < ApplicationController
       @recipes = Recipe.where(category_id: category)
     elsif commodity
       @recipes = Recipe.where(commodity_id: commodity)
+    elsif search
+      @recipes = Recipe.joins('inner Join re_ins on recipes.id = re_ins.recipe_id
+        join ingredients on re_ins.ingredient_id = ingredients.id')
+        .where('ingredients.name LIKE :ingredient_name', :ingredient_name => '%' + search + '%'
+      )
     else
       @recipes = Recipe.all
     end  
         
   end
+  
+  
 
   # GET /recipes/1
   # GET /recipes/1.json

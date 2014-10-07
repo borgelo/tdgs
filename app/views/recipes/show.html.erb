@@ -3,23 +3,31 @@
 	<div class="row clearfix">
 		<div class="col-md-3 column">
 			<h3>Ingredienser</h3>
-  <ul>
-  <% @recipe.re_ins.each do |rein| %><li><%= rein.amount %> <%=rein.unit%> <%= rein.ingredient.name %></li>
+  <ul>	  
+  <% @recipe.re_ins.each do |rein| %>
+  <%
+	if rein.amount && rein.amount > 1 && rein.ingredient.plural
+		ingredient_name = rein.ingredient.plural
+	else
+		ingredient_name = rein.ingredient.name
+	end
+  %>
+  <li><%= rein.amount %> <%=rein.unit%> <%= ingredient_name %></li>
 <% end %>
 </ul><br/>
 			</ul>
 		</div>
 		<div class="col-md-6 column">
-			<p>
+			<p align="middle"><%= image_tag "kulinarisk_small.png" %></p>
 				<h2><%= @recipe.title %></h2>
-				<%= image_tag "kulinarisk_small.png" %>
 				<p><%= @recipe.ingress %></p>
 
 				<p>
 					<%= @recipe.body.html_safe %>
 	
 				</p>
-				<%= link_to 'Se hele menyen ' + @recipe.meal.meet_date.to_s, @recipe.meal %>
-			</p>
+					<%= link_to 'Se hele oppskriften', @recipe.meal %>
+					<%= link_to 'Endre', edit_recipe_path(@recipe) %>
+				</p>
 		</div>
 	</div>

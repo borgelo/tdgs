@@ -6,15 +6,17 @@
 			</ul>
 		</div>
 		<div class="col-md-6 column">
+			<p align="middle"><%= image_tag "kulinarisk_small.png" %></p>
 			<h2>
 				<%= @meal.title %>
 			</h2>
-						<%= image_tag "kulinarisk_small.png" %>
-			<p>
-				Møtedato: <%= @meal.meet_date %>
-			</p>
 			<p>
 				<%= render partial: 'recipe', collection: @meal.recipes %>
 			</p>
+			
+			</p>
+				<%= link_to 'Se hele menyen', @meal.meeting %>
+			</p>
+					<%= link_to 'Legg til oppskrift', new_recipe_path %> | <%= link_to 'Endre', edit_meal_path %>
 		</div>
 	</div>

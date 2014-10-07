@@ -20,7 +20,7 @@
   <% end %>
 
 <div id="rein_ingredients">
-	<% @recipe.re_ins.each do |rein| %><li>  <%= rein.amount %> <%=rein.unit%> <%= rein.ingredient.name %></li>
+	<% @recipe.re_ins.each do |rein| %><li>  <%= rein.amount %> <%=rein.unit%> <%= rein.ingredient.name %> <%= link_to "r", rein, method: :delete, data: { confirm: "Er du sikker?" } %> <%= image_tag "trash.png" %></li>
 	<% end %>
 </div>
 <br/>
@@ -30,8 +30,8 @@
 		<%= f.number_field :amount %>
 	</div>
 	<div class="field">
-		<%= f.label :unit %>
-		<%= f.text_field :unit %>
+		<%= f.label :unit, :class => "col-md-2-column" %>
+		<%= f.text_field :unit, :class => "col-md-2-column" %>
   </div>
 	<div class="field">
 		<%= f.label :ingredient_id %>
