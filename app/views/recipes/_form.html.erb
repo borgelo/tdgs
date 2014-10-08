@@ -55,6 +55,11 @@
     <%= f.label :servings %><br>
     <%= f.text_field :servings %>
   </div>
+  <div>
+    <%= f.label :sort_order, 'Sortering (oppskrift nr i rett)' %><br/>
+    <%= f.number_field :sort_order %>  
+  </div>
+  	  <br/>
   <div class="actions">
     <%= f.submit "Lagre oppskriften", class: "btn btn-large btn-primary" %>
   </div>

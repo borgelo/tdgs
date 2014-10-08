@@ -11,7 +11,7 @@
 				<%= @meal.title %>
 			</h2>
 			<p>
-				<%= render partial: 'recipe', collection: @meal.recipes %>
+				<%= render partial: 'recipe', collection: @meal.recipes.order('sort_order ASC') %>
 			</p>
 			
 			</p>
