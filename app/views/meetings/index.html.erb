@@ -1,16 +1,15 @@
 <h1>Møter</h1>
 
-  <tbody>
-	  <table>
-    <% @meetings.each do |meeting| %>
-      <tr>
-        <td><%= meeting.meet_date %> <%= link_to meeting.name, meeting %></td>
-      </tr>
-    <% end %>
-</table>
-  </tbody>
-</table>
+<% @meetings.each do |meeting| %>
+<div class="box col-md-6 column" align="middle">
+	<%= image_tag "mat/rein.jpg" %><br/>
+	<%= link_to meeting.name, meeting %><br/>
+	<%= meeting.meet_date %>
+</div>
 
+<% end %>
+
+  
 <br>
 
 <%= link_to 'Nytt møte', new_meeting_path %>

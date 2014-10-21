@@ -26,7 +26,8 @@
 
 body {
         padding-top: 60px;
-        padding-bottom: 40px;		
+        padding-bottom: 40px;
+		background:url(background-1.png) 70% 0 no-repeat
       }
 .nav li {
 	  	padding-top: 5px;
@@ -71,7 +72,7 @@ color:#FF9900;
 }
 
 #wrapper{position:relative;overflow:hidden}
-#wrapper #bg-1{width:100%;background:url(background-1.png) 100% 0 no-repeat;height:798px;position:absolute;left:0;top:0;margin:5% 0 0}
-#wrapper #bg-2{width:100%;background:url(background-2.png) 75% 0 no-repeat;height:697px;position:absolute;left:0;top:0;margin:5% 0 0}
-#wrapper #bg-3{width:100%;background:url(background-3.png) 70% 0 no-repeat;height:490px;position:absolute;left:0;top:0;margin:5% 0 0}
+#wrapper #bg-1{width:100%;background:url(background-1.png) 100% 0 no-repeat;height:798px;position:absolute;left:0;top:0;margin:5% 0 0;border:5px solid red}
+#wrapper #bg-2{width:100%;background:url(background-2.png) 75% 0 no-repeat;height:697px;position:absolute;left:0;top:0;margin:5% 0 0;border:5px solid red}
+#wrapper #bg-3{width:100%;background:url(background-3.png) 70% 0 no-repeat;height:490px;position:absolute;left:0;top:0;margin:5% 0 0;border:5px solid red}
 

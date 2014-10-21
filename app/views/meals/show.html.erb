@@ -16,7 +16,7 @@
 			</p>
 			
 			</p>
-				<%= link_to 'Se hele menyen', @meal.meeting %>
+				<%= link_to @meal.meeting.name, @meal.meeting %>
 			</p>
 					<%= link_to 'Legg til oppskrift', new_recipe_path %> | <%= link_to 'Endre', edit_meal_path %>
 		</div>
