@@ -18,7 +18,18 @@
 		ingredient_name = rein.ingredient.name
 	end
   %>
-  <li><%= ingredient_amount %> <%=rein.unit%> <%= ingredient_name %></li>
+  <%
+	if rein.ingredient.name.include? "--"
+  %>
+<strong><%= ingredient_name.gsub! "--", "" %></strong>
+  <%
+	else
+  %>
+	<li><%= ingredient_amount %> <%=rein.unit%> <%= ingredient_name %></li>
+  <%
+	end
+  %>
+  
 <% end %>
 </ul><br/>
 			</ul>
