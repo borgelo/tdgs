@@ -1,14 +1,39 @@
   <strong><%= recipe_ingredient.title %></strong>
   <ul>
   <% recipe_ingredient.re_ins.each do |rein| %>
-  <%
-	if rein.amount && rein.amount > 1 && rein.ingredient.plural
-		ingredient_name = rein.ingredient.plural
-	else
-		ingredient_name = rein.ingredient.name
-	end
-  %>
-  <li><%= rein.amount %> <%=rein.unit%> <%= ingredient_name %></li>
-    
+  
+    <%
+    	if rein.amount && rein.amount > 1
+  		ingredient_amount = number_with_precision(rein.amount, :precision => 0)
+  	else
+  		ingredient_amount = number_with_precision(rein.amount, :precision => 1)
+  	end
+  
+  	if rein.amount && rein.amount > 1 && rein.ingredient.plural
+  		ingredient_name = rein.ingredient.plural
+  	else
+  		ingredient_name = rein.ingredient.name
+  	end
+    %>
+    <%
+  	if rein.ingredient.name.include? "--"
+    %>
+  <strong><%= ingredient_name.gsub! "--", "" %></strong>
+    <%
+  	else
+    %>
+  	<li><%= ingredient_amount %> <%=rein.unit%> <%= ingredient_name %></li>
+    <%
+  	end
+    %>
+  
+  
+     
 <% end %>
 </ul><br/>
+
+
+
+
+
+
