@@ -43,8 +43,14 @@
 					<%= @recipe.body.html_safe %>
 	
 				</p>
-					<%= link_to @recipe.meal.title, @recipe.meal %>
-					<%= link_to 'Endre', edit_recipe_path(@recipe) %>
+				Denne oppskriften er brukt i retten(e): <br/>
+				<%
+				@recipe.meals.each do |m|
+				%>
+				<li><%= link_to m.title, m %></li>
+				<% end %>
+					<br/>
+					<%= link_to 'Legg til i oppskrift', new_me_re_path(:recipe_id => @recipe.id, :recipe_name => @recipe.title) %><%= link_to 'Endre', edit_recipe_path(@recipe) %>
 				</p>
 		</div>
 	</div>

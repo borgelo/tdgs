@@ -10,16 +10,13 @@
       </ul>
     </div>
   <% end %>
-
+<br/>
+    <%= f.number_field :recipe_id, hidden:true %>
+ Legg <%= @recipe_name %> til i rett:
   <div class="field">
-    <%= f.label :recipe %><br>
-    <%= f.text_field :recipe %>
-  </div>
-  <div class="field">
-    <%= f.label :meal %><br>
-    <%= f.text_field :meal %>
+    <%= f.collection_select :meal_id, Meal.order('title ASC').all, :id, :title, {:class => 'selectpicker', :include_blank => '-- Velg rett --'} %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Legg til" %>
   </div>
 <% end %>

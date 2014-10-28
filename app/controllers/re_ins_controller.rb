@@ -22,7 +22,7 @@ class ReInsController < ApplicationController
 
   # POST /re_ins
   def create    
-    ingredient_name = re_in_params[:ingredient_name]
+    ingredient_name = re_in_params[:ingredient_name].downcase
     @ingredient = Ingredient.find_by_name(ingredient_name)
     if !@ingredient      
       @ingredient = Ingredient.new({"name"=>ingredient_name})

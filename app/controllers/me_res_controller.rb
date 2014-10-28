@@ -16,6 +16,8 @@ class MeResController < ApplicationController
   # GET /me_res/new
   def new
     @me_re = MeRe.new
+    @me_re.recipe_id = params[:recipe_id]
+    @recipe_name = params[:recipe_name]
   end
 
   # GET /me_res/1/edit
@@ -70,7 +72,7 @@ class MeResController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def me_re_params
-      params.require(:me_re).permit(:recipe, :meal)
+      params.require(:me_re).permit(:recipe_id, :meal_id)
     end
     
     # Before filters

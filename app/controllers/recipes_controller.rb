@@ -51,6 +51,8 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.save
+        @me_re = MeRe.new({"recipe_id"=>@recipe.id, "meal_id"=>@recipe.meal_id})
+        @me_re.save
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
         format.json { render action: 'show', status: :created, location: @recipe }
       else
