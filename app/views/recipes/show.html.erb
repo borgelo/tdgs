@@ -37,6 +37,7 @@
 		<div class="col-md-6 column">
 			<p align="middle"><%= image_tag "kulinarisk_small.png" %></p>
 				<h2><%= @recipe.title %></h2>
+				<%= image_tag @recipe.img_1, width: '100%' %>
 				<p><%= @recipe.ingress %></p>
 
 				<p>
