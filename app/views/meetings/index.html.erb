@@ -4,7 +4,7 @@
 <div class="box col-md-4 column" align="middle">
 	<%= link_to image_tag(meeting.img_1, width: '100%'), meeting %><br/>
 	<%= link_to meeting.name, meeting %><br/>
-	<%= meeting.meet_date %>
+	<%= meeting.meet_date.strftime("%d.%m.%Y") %>
 </div>
 
 <% end %>
