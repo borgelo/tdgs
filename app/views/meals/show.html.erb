@@ -12,7 +12,7 @@
 			</h2>
 			<p><%= @meal.ingress %></p>
 			<p>
-				<%= render partial: 'recipe', collection: @meal.recipes.order('sort_order ASC') %>
+				<%= render partial: 'recipe', collection: @meal.recipes.order('me_res.recipe_sort_order ASC') %>
 			</p>
 			
 			</p>

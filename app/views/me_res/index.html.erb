@@ -3,8 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Recipe</th>
-      <th>Meal</th>
+      <th>Oppskrift</th>
+      <th>Rett</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,10 +14,10 @@
   <tbody>
     <% @me_res.each do |me_re| %>
       <tr>
-        <td><%= me_re.recipe %></td>
-        <td><%= me_re.meal %></td>
-        <td><%= link_to 'Show', me_re %></td>
-        <td><%= link_to 'Edit', edit_me_re_path(me_re) %></td>
+        <td><%= me_re.recipe_id %></td>
+        <td><%= me_re.meal_id %></td>
+        <td><%= link_to 'Show | ', me_re %></td>
+        <td><%= link_to 'Edit | ', edit_me_re_path(me_re) %></td>
         <td><%= link_to 'Destroy', me_re, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
