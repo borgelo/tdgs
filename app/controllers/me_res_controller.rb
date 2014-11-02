@@ -72,7 +72,7 @@ class MeResController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def me_re_params
-      params.require(:me_re).permit(:recipe_id, :meal_id)
+      params.require(:me_re).permit(:recipe_id, :meal_id, :recipe_sort_order)
     end
     
     # Before filters
