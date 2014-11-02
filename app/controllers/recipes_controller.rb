@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
         .where('ingredients.name LIKE :ingredient_name', :ingredient_name => '%' + search + '%'
       )
     else
-      @recipes = Recipe.all
+      @recipes = Recipe.all.order('title ASC')
     end  
         
   end
