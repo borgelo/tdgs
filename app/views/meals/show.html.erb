@@ -2,7 +2,7 @@
 		<div class="col-md-3 column">
 			<h3>Ingredienser</h3>
 			<ul>
-				<%= render partial: 'recipe_ingredient', collection: @meal.recipes %>
+				<%= render partial: 'recipe_ingredient', collection: @meal.recipes.order('me_res.recipe_sort_order ASC') %>
 			</ul>
 		</div>
 		<div class="col-md-6 column">
