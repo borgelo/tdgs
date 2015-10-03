@@ -12,5 +12,6 @@
 				<%= render partial: 'meal', collection: @meeting.meals.order('sort_order ASC') %>
 			</p>
 		</div>
-		<%= link_to 'Legg til rett', new_meal_path %>
+        <%= button_to "Legg til rett", new_meal_path, :id => "new-meal-btn",
+                      :class => "btn btn-large btn-primary", :method => :get %>
 	</div>

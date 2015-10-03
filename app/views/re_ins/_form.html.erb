@@ -20,23 +20,26 @@
   <% end %>
 
 <div id="rein_ingredients">
-	<% @recipe.re_ins.each do |rein| %><li>  <%= rein.amount %> <%=rein.unit%> <%= rein.ingredient.name %> <%= link_to "r", rein, method: :delete, data: { confirm: "Er du sikker?" } %> <%= image_tag "trash.png" %></li>
+	<% @recipe.re_ins.each do |rein| %>
+        <li>  <%= rein.amount %> <%=rein.unit%> <%= rein.ingredient.name %> <%= link_to rein, method: :delete, data: { confirm: "Er du sikker?" } do %><span class="glyphicon glyphicon-trash"></span><%end%></li>
 	<% end %>
 </div>
 <br/>
   <%= f.number_field :recipe_id, value:@recipe.id, hidden:true %>
-	<div class="field">
-		<%= f.label :amount %>
-		<%= f.number_field :amount %>
-	</div>
-	<div class="field">
-		<%= f.label :unit, :class => "col-md-2-column" %>
-		<%= f.text_field :unit, :class => "col-md-2-column" %>
-  </div>
-	<div class="field">
-		<%= f.label :ingredient_id %>
-		<%= f.text_field :ingredient_name %>
-	</div>
+        <table class="table-condensed">
+            <tr>
+		        <td><%= f.label :amount %></td>
+		        <td><%= f.number_field :amount %></td>
+            </tr>
+            <tr>
+                <td><%= f.label :unit, :class => "col-md-2-column" %></td>
+                <td><%= f.text_field :unit, :class => "col-md-2-column" %></td>
+            </tr>
+            <tr>
+                <td><%= f.label :ingredient_id %></td>
+                <td><%= f.text_field :ingredient_name %></td>
+            </tr>
+        </table>
 
 	<%= f.button "legg til", name: "submit_ingredient_btn", id: "submit_ingredient_btn", type: "button", class: "btn btn-large btn-primary" %>
 <% end %>

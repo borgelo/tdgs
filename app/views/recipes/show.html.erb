@@ -1,3 +1,19 @@
+
+<div class="dropdown">
+<ol class="breadcrumb">
+    <li><a href="/">Hjem</a></li>
+    <li><%= link_to @recipe.meals[0].meeting.name, @recipe.meals[0].meeting%></li>
+    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=@recipe.meals[0].title%>
+        <span class="caret"></span></a><ul class="dropdown-menu">
+        <%
+           @recipe.meals.each do |m|
+        %>
+        <li><%= link_to m.title, m %></li>
+        <% end %>
+    </ul></li>
+    <li><%= @recipe.title %></li>
+</ol>
+</div>
 <p id="notice"><%= notice %></p>
 
 	<div class="row clearfix">
@@ -35,7 +51,6 @@
 			</ul>
 		</div>
 		<div class="col-md-6 column">
-			<p align="middle"><%= image_tag "kulinarisk_small.png" %></p>
 				<h2><%= @recipe.title %></h2>
 				<%= image_tag @recipe.img_1, width: '100%' %>
 				<p><%= @recipe.ingress %></p>
@@ -44,14 +59,10 @@
 					<%= @recipe.body.html_safe %>
 	
 				</p>
-				Denne oppskriften er brukt i retten(e): <br/>
-				<%
-				@recipe.meals.each do |m|
-				%>
-				<li><%= link_to m.title, m %></li>
-				<% end %>
-					<br/>
-					<%= link_to 'Legg til i oppskrift', new_me_re_path(:recipe_id => @recipe.id, :recipe_name => @recipe.title) %><%= link_to 'Endre', edit_recipe_path(@recipe) %>
-				</p>
+
 		</div>
+        <div class="col-md-3 column">
+             <p><%= link_to 'Endre', edit_recipe_path(@recipe), :class => "btn btn-default btn-xs", :method => :get %></p>
+             <p><%= link_to 'Legg til i rett', new_me_re_path(:recipe_id => @recipe.id, :recipe_name => @recipe.title), :class => "btn btn-default btn-xs", :method => :get %></p>
+        </div>
 	</div>

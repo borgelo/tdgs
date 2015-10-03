@@ -1,3 +1,8 @@
+<ol class="breadcrumb">
+    <li><a href="/">Hjem</a></li>
+    <li><%= link_to @meal.meeting.name, @meal.meeting%></li>
+    <li><%= @meal.title %></li>
+</ol>
 	<div class="row clearfix">
 		<div class="col-md-3 column">
 			<h3>Ingredienser</h3>
@@ -6,7 +11,6 @@
 			</ul>
 		</div>
 		<div class="col-md-6 column">
-			<p align="middle"><%= image_tag "kulinarisk_small.png" %></p>
 			<h2>
 				<%= @meal.title %>
 			</h2>
@@ -15,10 +19,12 @@
 			<p>
 				<%= render partial: 'recipe', collection: @meal.recipes.order('me_res.recipe_sort_order ASC') %>
 			</p>
-			
-			</p>
-				<%= link_to @meal.meeting.name, @meal.meeting %>
-			</p>
-					<%= link_to 'Legg til oppskrift', new_recipe_path %> | <%= link_to 'Endre', edit_meal_path %>
+
+
 		</div>
+        <div class="col-md-3 column">
+            <p><%= button_to 'Endre', edit_meal_path, :class => "btn btn-default btn-xs", :method => :get %></p>
+            <p><%= button_to 'Legg til oppskrift', new_recipe_path, :class => "btn btn-default btn-xs", :method => :get %></p>
+        </div>
+
 	</div>

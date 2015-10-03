@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:border-style="http://www.w3.org/1999/xhtml">
 <head>
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-		
-<div class="container">
-	<div class="row clearfix">
-		<div class="col-md-9 column">
-			<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="/" title="Tromsø Dannede Gourmet Selskab"><%= image_tag "tdgs_logo_small.png" %></a>
-				</div>
-				
+<body data-spy="scroll" data-target=".navbar"data-offset="50">
+<div>
+    <%= image_tag "tdgs_logo.png" %>
+</div>
+			<nav class="navbar navbar-default navbar-inverse" data-spy="affix" data-offset-top="115"  role="navigation">
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="dropdown">
@@ -76,8 +71,7 @@
 					</ul>
 				</div>
 			</nav>
-		</div>
-	</div>
+
 	      <% flash.each do |key, value| %>
 	        <div class="alert alert-<%= key %>"><%= value %></div>
 	      <% end %>
