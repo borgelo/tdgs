@@ -1,12 +1,15 @@
 <h1>Møter</h1>
 
 <% @meetings.each do |meeting| %>
-<div class="box col-md-4 column" align="middle">
-	<%= link_to image_tag(meeting.img_1, width: '100%'), meeting %><br/>
-	<%= link_to meeting.name, meeting %><br/>
-	<%= meeting.meet_date.strftime("%d.%m.%Y") %>
-</div>
-
+    <div class="row">
+        <div class="col-sm-4 col-md-3">
+            <div class="thumbnail">
+	            <%= link_to image_tag(meeting.img_1), meeting %><br/>
+	            <h4><%= link_to meeting.name, meeting %></h4>
+	            <%= meeting.meet_date.strftime("%d.%m.%Y") %>
+            </div>
+        </div>
+    </div>
 <% end %>
 
   
