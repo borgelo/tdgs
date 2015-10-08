@@ -1,7 +1,7 @@
 <h1>Møter</h1>
 
+<div class="row">
 <% @meetings.each do |meeting| %>
-    <div class="row">
         <div class="col-sm-4 col-md-3">
             <div class="thumbnail">
 	            <%= link_to image_tag(meeting.img_1), meeting %><br/>
@@ -9,9 +9,8 @@
 	            <%= meeting.meet_date.strftime("%d.%m.%Y") %>
             </div>
         </div>
-    </div>
 <% end %>
-
+</div>
   
 <br>
 
