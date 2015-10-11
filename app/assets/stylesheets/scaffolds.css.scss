@@ -19,14 +19,18 @@ pre {
 }
 
 a {
-  color: #000;
+  color: cornflowerblue;
   &:visited {
-    color: #666;
+    color: cornflowerblue;
   }
   &:hover {
     color: #fff;
-    background-color: #000;
+    background-color: cornflowerblue;
   }
+}
+
+.btn-default {
+  color: cornflowerblue;
 }
 
 div {
@@ -43,6 +47,27 @@ div {
   padding: 2px;
   background-color: red;
   display: table;
+}
+
+
+h1 {
+  color: #357ebd;
+}
+
+h2 {
+  color: #357ebd;
+}
+
+h5 {
+  border-bottom: solid thin;
+}
+
+.separator {
+  border-bottom: dotted thin;
+}
+
+.breadcrumb {
+  margin-bottom: 2px;
 }
 
 #error_explanation {
@@ -66,4 +91,6 @@ div {
     font-size: 12px;
     list-style: square;
   }
+
+
 }

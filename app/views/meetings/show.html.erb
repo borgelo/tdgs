@@ -1,6 +1,15 @@
-	<div class="row clearfix">
-		<div class="col-md-12 column" align="middle">
+	<div class="row">
+		<div class="col-md-10 column" align="middle">
 			<%= image_tag "kulinarisk_small.png" %>
+        </div>
+        <div class="col-md-2">
+            <p><%= link_to "Legg til rett", new_meal_path, :id => "new-meal-btn",
+                          :class => "btn btn-default btn-xs", :method => :get %></p>
+            <p><%= link_to "Endre", edit_meeting_path(@meeting), :id => "edit-meal-btn", :class => "btn btn-default btn-xs", :method => :get %></p>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-10 column" align="middle">
 			<h2>
 				<%= @meeting.name %>
 			</h2>
@@ -12,6 +21,4 @@
 				<%= render partial: 'meal', collection: @meeting.meals.order('sort_order ASC') %>
 			</p>
 		</div>
-        <%= button_to "Legg til rett", new_meal_path, :id => "new-meal-btn",
-                      :class => "btn btn-large btn-primary", :method => :get %>
 	</div>
