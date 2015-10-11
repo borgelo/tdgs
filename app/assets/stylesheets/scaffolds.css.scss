@@ -6,6 +6,8 @@ body {
   line-height: 18px;
 }
 
+
+
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -49,6 +51,16 @@ div {
   display: table;
 }
 
+.container {
+  background: linear-gradient(
+                  to right,
+                  #82CAFA 0%,
+                  #82CAFA 33%,
+                  #fff 33%,
+                  #fff 100%
+  );
+}
+
 
 h1 {
   color: #357ebd;
@@ -68,6 +80,8 @@ h5 {
 
 .breadcrumb {
   margin-bottom: 2px;
+  background-color: #fff;
+  border-bottom: solid thin;
 }
 
 #error_explanation {

@@ -3,6 +3,7 @@
     <li><%= link_to @meal.meeting.name, @meal.meeting%></li>
     <li><%= @meal.title %></li>
 </ol>
+    <div class="container">
     <div class="row clearfix">
         <div class="col-md-6 col-md-offset-4 column"><h1><%= @meal.title %></h1></div>
         <div class="col-md-2 column">
@@ -24,5 +25,5 @@
 				<%= render partial: 'recipe', collection: @meal.recipes.order('me_res.recipe_sort_order ASC') %>
 			</p>
 		</div>
-
+    </div>
 	</div>
