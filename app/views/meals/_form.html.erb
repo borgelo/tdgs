@@ -10,29 +10,29 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-	  <%= f.label :meal, 'Møte' %><br>
-	  <%= f.collection_select :meeting_id, Meeting.order('meet_date ASC').all, :id, :name, {:class => 'selectpicker', :include_blank => '-- Velg møte --'} %>
-
-  <div class="field">
-    <%= f.label :title, 'Tittel' %><br/>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :Ingress, 'Ingress' %><br/>
-    <%= f.text_field :ingress %>
-  </div>
-  <div class="field">
-	  <%= f.label :img_1, 'Bilde' %><br/>
-	  <%= f.text_field :img_1 %>
-  </div>
-  <div>
-    <%= f.label :sort_order, 'Sortering (rett nr i oppskrift)' %><br/>
-    <%= f.number_field :sort_order %>  
-  </div>
-	  <br/>
-  <div class="actions">
-    <%= f.submit "Registrer", :class=>"btn btn-large btn-primary" %>
-  </div>
+      <div class="field">
+          <%= f.label :meal, 'Møte' %><br>
+          <%= f.collection_select :meeting_id, Meeting.order('meet_date ASC').all, :id, :name, {:class => 'selectpicker', :include_blank => '-- Velg møte --'} %>
+      </div>
+      <div class="field">
+        <%= f.label :title, 'Tittel' %><br/>
+        <%= f.text_field :title %>
+      </div>
+      <div class="field">
+        <%= f.label :Ingress, 'Ingress' %><br/>
+        <%= f.text_field :ingress %>
+      </div>
+      <div class="field">
+          <%= f.label :img_1, 'Bilde' %><br/>
+          <%= f.text_field :img_1 %>
+      </div>
+      <div>
+        <%= f.label :sort_order, 'Sortering (rett nr i oppskrift)' %><br/>
+        <%= f.number_field :sort_order %>
+      </div>
+          <br/>
+      <div class="actions">
+          <%= f.submit "Lagre", :class=>"btn btn-large btn-primary" %>
+          <%= link_to "Tilbake", @meal, :class=>"btn btn-large btn-primary", :method => :get %>
+      </div>
 <% end %>
