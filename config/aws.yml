@@ -1,7 +1,6 @@
 development:
   access_key_id: AKIAJY7JOLZD2F77YPOQ
   secret_access_key: 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
-  simple_db_consistent_reads: false
 
 production:
   <<: *development
