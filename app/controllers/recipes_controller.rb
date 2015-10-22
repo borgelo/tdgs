@@ -18,8 +18,7 @@ class RecipesController < ApplicationController
       @recipes = Recipe.where(commodity_id: commodity)
     elsif search
       @recipes = Recipe.joins('inner Join re_ins on recipes.id = re_ins.recipe_id
-        join ingredients on re_ins.ingredient_id = ingredients.id')
-        .where('ingredients.name LIKE :ingredient_name', :ingredient_name => '%' + search + '%'
+        join ingredients on re_ins.ingredient_id = ingredients.id').where('ingredients.name LIKE :ingredient_name', :ingredient_name => '%' + search + '%'
       )
     else
       @recipes = Recipe.all.order('title ASC')
