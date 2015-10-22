@@ -51,13 +51,13 @@ div {
   display: table;
 }
 
-.container {
+.color-container {
   background: linear-gradient(
                   to right,
-                  #82CAFA 0%,
-                  #82CAFA 33%,
-                  #fff 33%,
-                  #fff 100%
+                  #fff 0%,
+                  #fff 85%,
+                  #82CAFA 85%,
+                  #82CAFA 100%
   );
 }
 
@@ -80,8 +80,22 @@ h5 {
 
 .breadcrumb {
   margin-bottom: 2px;
-  background-color: #fff;
   border-bottom: solid thin;
+  color:#82CAFA;
+  background: linear-gradient(
+                  to right,
+                  #fff 0%,
+                  #fff 85%,
+                  #82CAFA 85%,
+                  #82CAFA 100%
+  );
+
+}
+
+.acton-button {
+  vertical-align: bottom;
+  background-color: red;
+  color: red;
 }
 
 #error_explanation {

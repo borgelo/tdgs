@@ -1,9 +1,10 @@
-<ol class="breadcrumb">
-    <li><a href="/">Hjem</a></li>
-    <li><%= link_to @meal.meeting.name, @meal.meeting%></li>
-    <li><%= @meal.title %></li>
-</ol>
-    <div class="container">
+
+    <div class="color-container">
+        <ol class="breadcrumb">
+            <li><a href="/">Hjem</a></li>
+            <li><%= link_to @meal.meeting.name, @meal.meeting%></li>
+            <li><%= @meal.title %></li>
+        </ol>
     <div class="row clearfix">
         <div class="col-md-6 col-md-offset-4 column"><h1><%= @meal.title %></h1></div>
         <div class="col-md-2 column">

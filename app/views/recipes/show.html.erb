@@ -19,13 +19,9 @@
     <% end %>
     <li><%= @recipe.title %></li>
 </ol>
-    <div class="container">
+    <div class="color-container">
     <div class="row clearfix">
         <div class="col-md-6 col-md-offset-4 column"><h1><%= @recipe.title %></h1></div>
-        <div class="col-md-2 column">
-            <p><%= link_to 'Endre', edit_recipe_path(@recipe), :class => "btn btn-default btn-xs", :method => :get %></p>
-            <p><%= link_to 'Legg til i rett', new_me_re_path(:recipe_id => @recipe.id, :recipe_name => @recipe.title), :class => "btn btn-default btn-xs", :method => :get %></p>
-        </div>
     </div>
 	<div class="row clearfix">
 		<div class="col-md-3 col-md-offset-1 column">
@@ -62,7 +58,11 @@
 			</ul>
 		</div>
 		<div class="col-md-6 column">
-				<%= image_tag @recipe.img_1, width: '100%' %>
+				<%
+                    if @recipe.img_1 != nil
+                        image_tag @recipe.img_1, width: '100%'
+                    end
+                %>
 				<p><%= @recipe.ingress %></p>
 
 				<p>
@@ -71,5 +71,9 @@
 				</p>
 
 		</div>
+        <div class="col-md-2 column action-button">
+            <p><%= link_to 'Endre', edit_recipe_path(@recipe), :class => "btn btn-default btn-xs", :method => :get %></p>
+            <p><%= link_to 'Legg til i rett', new_me_re_path(:recipe_id => @recipe.id, :recipe_name => @recipe.title), :class => "btn btn-default btn-xs", :method => :get %></p>
+        </div>
 	</div>
     </div>
