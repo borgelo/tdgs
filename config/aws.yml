@@ -5,4 +5,3 @@ development:
 
 production:
   <<: *development
-  simple_db_consistent_reads: true
