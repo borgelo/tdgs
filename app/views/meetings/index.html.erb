@@ -12,7 +12,12 @@
 <% @meetings.each do |meeting| %>
         <div class="col-sm-4 col-md-3">
             <div class="thumbnail">
-	            <%= link_to image_tag(meeting.img_1), meeting %><br/>
+	            <% if meeting.img_1 != '' %>
+                     <%= link_to image_tag(meeting.img_1), meeting %><br/>
+                <% else %>
+                    <%= link_to image_tag('https://s3-eu-west-1.amazonaws.com/tdgs/images/defaultFood.jpg'), meeting %><br/>
+                <% end %>
+
 	            <h4><%= link_to meeting.name, meeting %></h4>
 	            <%= meeting.meet_date.strftime("%d.%m.%Y") %>
             </div>
