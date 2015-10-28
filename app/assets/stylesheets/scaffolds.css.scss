@@ -51,16 +51,6 @@ div {
   display: table;
 }
 
-.color-container {
-  background: linear-gradient(
-                  to right,
-                  #fff 0%,
-                  #fff 85%,
-                  #82CAFA 85%,
-                  #82CAFA 100%
-  );
-}
-
 
 h1 {
   color: #357ebd;
@@ -82,12 +72,6 @@ h5 {
   margin-bottom: 2px;
   border-bottom: solid thin;
   color:#82CAFA;
-  background: linear-gradient(
-                  to right,
-                  #fff 0%,
-                  #fff 85%,
-                  #82CAFA 85%,
-                  #82CAFA 100%
   );
 
 }
